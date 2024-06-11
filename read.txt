@@ -1,0 +1,67 @@
+Name: Entrix Makambi 
+database assignment week 13-16
+
+
+conditional expressions  week 13 assignment
+I performed the following querries in the following systematic approach
+
+create database netflix_Ke;
+use netflix_Ke;
+imported the csv file into a new table named content
+from the table,
+
+select *
+from content
+where type='movie' and release_year>2017;
+
+the above query returns a list of all movies released from 2017 henceforth 
+
+select *
+from content
+where type='Tv Show' and country='United States';
+
+the above query returns tv shows that originates from the united States
+
+select *
+from content
+where type='Tv Show' and title='Dear White People';
+
+the above query returns tv show with the title Dear White People
+
+select *
+from content
+WHERE cast LIKE '%Vanessa Hudgens%';
+
+the above query returns the cast with the name 'Vanessa Hudgens'
+
+select *
+from content
+where rating='PG-13' and duration>90;
+
+the above query returns the tv-shows with a rating of 'PG-13' and a duration above 90 minutes
+
+select *
+from content
+where director='Haile Gerima';
+
+the above querry returns shows directed by 'Haile Gerima'
+
+
+SELECT 
+    type,
+    CASE 
+        WHEN country = 'United States' AND release_year > 2010 THEN 'Timeless release'
+        WHEN rating = 'TV-MA' AND listed_in = 'Documentaries' THEN ' Documentary hub enjoy'
+        WHEN director = 'Bruno Garotti' THEN 'Directed by Bruno Garotti'
+        ELSE 'Other'
+    END AS category
+FROM 
+    content;
+
+from the above querry, we select the type column from our table to work with
+for the first condition when the country of origin is united states and the release_year is from 2010 we get a 'Timeless release' response 
+likeise for the second condition when the rating is TV-MA and listed in documentaries it renders ' Documentary hub enjoy'
+the last condition evaluates the directors name and returns the directed by 'directors name'
+if the type does not meet any of the conditions the else condition is brought into action specifying the rows in the column doesnt meet the outlined conditions
+
+
