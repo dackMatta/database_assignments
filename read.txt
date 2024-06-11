@@ -64,4 +64,18 @@ likeise for the second condition when the rating is TV-MA and listed in document
 the last condition evaluates the directors name and returns the directed by 'directors name'
 if the type does not meet any of the conditions the else condition is brought into action specifying the rows in the column doesnt meet the outlined conditions
 
+select show_id,
+case
+when title='Ganglands' then 'dope movie '
+when country='India' then 'great fanatasy'
+when type='Movie' and release_year>2020 then 'a must watch'
+else 'working on it' end as country
+from content;
 
+
+This SQL query selects the show_id from the content table and creates a new column named country.
+
+If the title is 'Ganglands', it labels it as 'dope movie'.
+If the country is 'India', it describes it as 'great fantasy'.
+If it's a movie released after 2020, it marks it as 'a must watch'.
+For all other cases, it labels it as 'working on it'.
