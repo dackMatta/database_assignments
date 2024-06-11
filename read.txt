@@ -76,6 +76,6 @@ from content;
 This SQL query selects the show_id from the content table and creates a new column named country.
 
 If the title is 'Ganglands', it labels it as 'dope movie'.
-If the country is 'India', it describes it as 'great fantasy'.
+If the movie origin country is 'India', it describes it as 'great fantasy'.
 If it's a movie released after 2020, it marks it as 'a must watch'.
 For all other cases, it labels it as 'working on it'.
