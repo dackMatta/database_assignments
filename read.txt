@@ -3,6 +3,8 @@ database assignment week 13-16
 
 
 conditional expressions  week 13 assignment
+i didn't find any difficulties working with the chosen dataset
+The one intresting thing i noted is precise arrangement of the dataset table contents under each specified column
 I performed the following querries in the following systematic approach
 
 create database netflix_Ke;
@@ -79,3 +81,33 @@ If the title is 'Ganglands', it labels it as 'dope movie'.
 If the movie origin country is 'India', it describes it as 'great fantasy'.
 If it's a movie released after 2020, it marks it as 'a must watch'.
 For all other cases, it labels it as 'working on it'.
+
+SELECT show_id, title, release_year, duration
+FROM content
+WHERE release_year > 2015 and duration<100
+ORDER BY show_id;
+
+
+
+using the count querry
+
+SELECT COUNT(*) AS title
+FROM content;
+returns the number of titles in this case 100
+
+SELECT COUNT(*) AS director
+FROM content
+WHERE type = 'Movie';
+returns the number of drectors under the movie row in this case 55
+
+
+using the AVG querry
+
+SELECT AVG(duration) AS average_movie_duration
+FROM content
+WHERE type = 'TV Show';
+Returns the avarage duration under a column and saves it under a column avarage_movie_duration in this case 2.355555555554432
+
+
+
+
