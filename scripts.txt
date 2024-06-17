@@ -1,0 +1,35 @@
+select *
+from user_info;
+
+get insights of the dataset content
+
+SELECT location, COUNT(*) AS count
+FROM user_info
+GROUP BY location;
+from the dataset the users demographics and location is as follows;
+Australia=352
+United kingdom=329
+United States=319
+
+SELECT 
+    CASE
+        WHEN age < 20 THEN 'watoto'
+        WHEN age BETWEEN 20 AND 29 THEN 'vijana'
+        WHEN age BETWEEN 30 AND 39 THEN 'wazee'
+        WHEN age BETWEEN 40 AND 49 THEN 'veterans'
+        WHEN age BETWEEN 50 AND 59 THEN 'ancestors'
+        ELSE '60+'
+    END AS age_group,
+    AVG(income) AS average_income
+FROM user_info
+GROUP BY age_group;
+returns the avarage income based on the age group
+
+SELECT platform, AVG(time_spent) AS average_time_spent
+FROM user_info
+GROUP BY platform;
+the avarage time spent by users on each platform;
+Facebook=5.05
+Instagram=5.1
+Youtube=4.8
+
