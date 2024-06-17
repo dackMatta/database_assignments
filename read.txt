@@ -111,3 +111,4 @@ Returns the avarage duration under a column and saves it under a column avarage_
 
 
 
+

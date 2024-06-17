@@ -1,0 +1,136 @@
+my findings while working with the user_information from the dataset 
+Social media users
+
+SELECT COUNT(*) AS user_count
+FROM user_info;
+returns the number os user data camptured in this case 1000
+
+SELECT AVG(age) AS average_age
+FROM user_info;
+users avarage age =40.9860
+
+SELECT gender, COUNT(*) AS count
+FROM user_info
+GROUP BY gender;
+from the 1000 users, by gender;
+male=331
+female=337
+non-binary=332
+
+SELECT platform, COUNT(*) AS count
+FROM user_info
+GROUP BY platform;
+the number of users per platform;
+Facebook=307
+Instagram=363
+Youtube=330
+
+SELECT platform, AVG(time_spent) AS average_time_spent
+FROM user_info
+GROUP BY platform;
+the avarage time spent by users on each platform;
+Facebook=5.05
+Instagram=5.1
+Youtube=4.8
+
+SELECT interests, COUNT(*) AS count
+FROM user_info
+GROUP BY interests;
+the users on all the plattforms have the following interests;
+Lifestyle=341
+Sports=331
+Travel=328
+
+SELECT profession, COUNT(*) AS count
+FROM user_info
+GROUP BY profession;
+from the 1000 users,
+Market managers=355
+Software Engineers=336
+Student=309
+
+SELECT location, COUNT(*) AS count
+FROM user_info
+GROUP BY location;
+from the dataset the users demographics and location is as follows;
+Australia=352
+United kingdom=329
+United States=319
+
+SELECT AVG(income) AS average_income
+FROM user_info;
+the users avarage income equates to 15014.8230
+
+SELECT isHomeOwner, COUNT(*) AS count
+FROM user_info
+GROUP BY isHomeOwner;
+From the dataset 508 of the users own a house with 492 without houses
+
+SELECT gender, profession, COUNT(*) AS count
+FROM user_info
+GROUP BY gender, profession;
+returns the number of employees based on their gender and profession
+for example there are 108 female market managers and 116 male software engineers 
+
+SELECT interests, COUNT(*) AS count
+FROM user_info
+WHERE time_spent > 0
+GROUP BY interests
+ORDER BY count DESC
+LIMIT 1;
+this query returns the number of users who spend more than 1 hour on social media based on their interests
+in this case 341 users spend more than an hour on social media with majority of their interest being Lifestyle
+
+SELECT AVG(time_spent) AS average_time_spent
+FROM user_info
+WHERE Owns_Car = 'true';
+this query returns the avarage_time_spent by users who own a car on social media in this case 4.9814hrs  
+
+SELECT profession, COUNT(*) AS count
+FROM user_info
+WHERE indebt = 'true'
+GROUP BY profession
+ORDER BY count DESC
+LIMIT 1;
+this query returns number of users who are indebt based on their professsion in this case 183 market managers are indebt
+
+SELECT 
+    CASE
+        WHEN age < 20 THEN 'watoto'
+        WHEN age BETWEEN 20 AND 29 THEN 'vijana'
+        WHEN age BETWEEN 30 AND 39 THEN 'wazee'
+        WHEN age BETWEEN 40 AND 49 THEN 'veterans'
+        WHEN age BETWEEN 50 AND 59 THEN 'ancestors'
+        ELSE '60+'
+    END AS age_group,
+    AVG(income) AS average_income
+FROM user_info
+GROUP BY age_group;
+for this query we group the users based on their age range 
+
+SELECT location, AVG(income) AS average_income
+FROM user_info
+GROUP BY location
+ORDER BY average_income DESC
+LIMIT 5;
+the query returns the avarage income of users based on their location in this case
+United Kingdom=15121
+Australia=15036
+United States=14880
+
+SELECT 
+    CASE
+        WHEN age < 20 THEN 'watoto'
+        WHEN age BETWEEN 20 AND 29 THEN 'vijana'
+        WHEN age BETWEEN 30 AND 39 THEN 'wazee'
+        WHEN age BETWEEN 40 AND 49 THEN 'veterans'
+        WHEN age BETWEEN 50 AND 59 THEN 'ancestors'
+        ELSE '60+'
+    END AS age_group,
+    AVG(income) AS average_income
+FROM user_info
+WHERE indebt = 'true'
+GROUP BY age_group
+ORDER BY average_income DESC;
+
+
