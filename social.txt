@@ -1,3 +1,6 @@
+Name: Entrix Makambi 
+database assignment week 13-16
+
 my findings while working with the user_information from the dataset 
 Social media users
 
